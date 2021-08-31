@@ -1,0 +1,152 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    box-sizing: border-box;
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container-img{
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 150px;
+    margin-right: 20px;
+}
+.producto-titulo{
+    text-align: center;
+    margin-top: 10px;
+}
+.producto-valor{
+    margin-left: 10px;
+}
+.producto-time{
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    margin-left: 5px;
+}
+.producto-btn{
+    float: right;
+    margin: 10px;
+}
+
+
+/* Card productos index */
+.producto-body {
+    box-shadow: 1px 1px 4px;
+}
+
+.producto-body:hover{
+    border: solid #41B9D0;
+}
+
+/* fin card productos index */
+
+
+/* Detalle del producto */
+.card-producto{
+    display: flex;
+}
+.card-img{
+    height: 82vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-img img{
+    width: auto;
+    max-height: 90%;
+
+}
+.card-body-pro{
+    height: 82vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.body-titulo{
+    display: flex;
+    justify-content: space-around;
+}
+.card-title {
+    font-size: 4rem;
+    font-weight: 700;
+    font-style: italic;
+}
+.titulo-logo img{
+    width: 150px;
+}
+.text-import{
+    margin: 10px;
+}
+.card-descripcion{
+    text-align: center;
+    margin: 15px;
+    font-weight: 700;
+    font-size: 2rem;
+}
+@media (max-width:600px){
+    .media-card-producto {
+        display: block;
+        width: 100vw;
+    }
+    .card-body, .media-card-img {
+        width: 100vw;
+    }
+}
+/* Fin del detalle del producto */
+
+
+/* formulario de ingreso */
+.container-form {
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.container-form form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    background-color: #FEFFDE;
+    padding: 10px;
+    box-shadow: 1px 1px 4px;
+}
+
+.container-form form button {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid;
+    margin: 0 auto;
+}
+
+.container-form label {
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.container-form form h1 {
+    text-align: center;
+}
+
+.input-user {
+    height: 25px;
+    margin: 0px 10px 20px 10px;
+}

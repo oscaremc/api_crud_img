@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-pinterest",
+  "version": "1.0.0",
+  "description": "carga de productos y administracion de la informacion para la pagina web",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "fs-extra": "^7.0.1",
+    "mongoose": "^5.13.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "timeago.js": "^4.0.2",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
