@@ -51,17 +51,17 @@ nav {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     
     .logo img {
         width: 160px;
         margin-right: 20px;
     }
     
-    .btn-ws p {
-        font-size: 1.1rem;
-        margin: 0;
+    .btn-ws p{
+        font-size: 1.5rem;
     }
-
-
+    .btn-ws img{
+        width: 20px;
+    }
     }
