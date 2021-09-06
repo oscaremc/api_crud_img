@@ -27,5 +27,13 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "nodemon": "^1.18.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oscaremc/api_crud_img.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oscaremc/api_crud_img/issues"
+  },
+  "homepage": "https://github.com/oscaremc/api_crud_img#readme"
 }
