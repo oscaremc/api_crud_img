@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/piñateriala8', {
+mongoose.connect('https://pinaterialaoctava.herokuapp.com/', {
     useNewUrlParser: true
 })
     .then(db => console.log('Db is connected'))
