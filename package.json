@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-pinterest",
+  "name": "pinaterialaoctava",
   "version": "1.0.0",
-  "description": "carga de productos y administracion de la informacion para la pagina web",
+  "description": "trabajo realizado para adminsitrar el guardado y control de las imagenes en una base de datos",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src"
@@ -20,6 +20,12 @@
     "uuid": "^3.4.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "nodemon": "^1.18.9"
   }
 }
