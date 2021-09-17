@@ -6,9 +6,15 @@ const { format } = require('timeago.js');
 
 const path = require('path');
 
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config()
+}
+
 // intializations
 const app = express();
 require('./database');
+
+
 
 // settings
 app.set('views', path.join(__dirname, 'views'));

@@ -6,6 +6,7 @@ const imageSchema = new Schema({
     description: {type: String},
     filename: {type: String},
     path: {type: String},
+    puclic_id: {type: String},
     originalname: {type: String},
     mimetype: {type: String},
     size: { type: Number},

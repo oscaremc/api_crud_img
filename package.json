@@ -4,12 +4,15 @@
   "description": "trabajo realizado para adminsitrar el guardado y control de las imagenes en una base de datos",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "oemc",
   "license": "ISC",
   "dependencies": {
+    "cloudinary": "^1.27.0",
+    "dotenv": "^10.0.0",
     "ejs": "^2.7.4",
     "express": "^4.17.1",
     "fs-extra": "^7.0.1",

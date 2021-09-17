@@ -6,6 +6,13 @@ const router = Router();
 
 // Models
 const Image = require('../models/Image');
+const cloudinary = require('cloudinary')
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+})
+const fs = require('fs-extra');
 
 router.get('/', async (req, res) => {
     const images = await Image.find();
@@ -33,17 +40,23 @@ router.get('/edit/image/:id', async (req, res) => {
 });
 
 router.post('/edit/upload', async (req, res) => {
+    
+    const result = await cloudinary.v2.uploader.upload(req.file.path)
+    console.log(result)
     const image = new Image();
     image.title = req.body.title;
     image.valor = req.body.valor;
     image.description = req.body.description;
     image.filename = req.file.filename;
-    image.path = '/img/uploads/' + req.file.filename;
+    // image.path = '/img/uploads/' + req.file.filename;
     image.originalname = req.file.originalname;
     image.mimetype = req.file.mimetype;
     image.size = req.file.size;
+    image.path = result.url;
+    image.puclic_id = result.public_id;
 
     await image.save();
+    await fs.unlink(req.file.path);
     res.redirect('/edit/masterEdit');
 });
 
@@ -56,7 +69,7 @@ router.get('/image/:id', async (req, res) => {
 router.get('/image/:id/delete', async (req, res) => {
     const { id } = req.params;
     const imageDeleted = await Image.findByIdAndDelete(id);
-    await unlink(path.resolve('./src/public' + imageDeleted.path));
+    await unlink(path.resolve(req.file.path));
     res.redirect('/edit/masterEdit');
 });
 
