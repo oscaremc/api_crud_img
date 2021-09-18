@@ -18,7 +18,7 @@
             <div class="col-md-4 offset-md-4">
 
                 <div class="card animated fadeInDown">
-                    <img src="<%= image.path %>" class="card-img-top" alt="<%= image.filename %>">
+                    <img src="<%= image.url %>" class="card-img-top" alt="<%= image.filename %>">
                     <div class="card-body">
                         <h5 class="card-title">
                             <%= image.title %>
@@ -32,7 +32,7 @@
                         <p >
                             <%= format(image.created_at) %>
                         </p>
-                        <a href="/image/<%= image._id%>/delete" class="btn btn-danger btn-block">
+                        <a href="/image/delete/<%= image.public_id%>" class="btn btn-danger btn-block">
                             Delete Image
                         </a>
                     </div>

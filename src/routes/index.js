@@ -52,8 +52,8 @@ router.post('/edit/upload', async (req, res) => {
     image.originalname = req.file.originalname;
     image.mimetype = req.file.mimetype;
     image.size = req.file.size;
-    image.path = result.url;
-    image.puclic_id = result.public_id;
+    image.url = result.url;
+    image.public_id = result.public_id;
 
     await image.save();
     await fs.unlink(req.file.path);
@@ -66,11 +66,17 @@ router.get('/image/:id', async (req, res) => {
     res.render('profile', { image });
 });
 
-router.get('/image/:id/delete', async (req, res) => {
-    const { id } = req.params;
-    const imageDeleted = await Image.findByIdAndDelete(id);
-    await unlink(path.resolve(req.file.path));
-    res.redirect('/edit/masterEdit');
+router.get('/image/delete/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const imageDeleted = await Image.findByIdAndDelete(id);
+        const result = await cloudinary.v2.uploader.destroy(imageDeleted.public_id)
+        // await unlink(path.resolve(req.file.path));
+        console.log(result)
+        res.redirect('/edit/masterEdit');
+    } catch (error) {
+        console.log(error)
+    }
 });
 
 module.exports = router;
