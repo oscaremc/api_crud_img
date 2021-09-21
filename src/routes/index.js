@@ -66,7 +66,7 @@ router.get('/image/:id', async (req, res) => {
     res.render('profile', { image });
 });
 
-router.get('/image/delete/:id', async (req, res) => {
+router.get('/image/delete/:public_id', async (req, res) => {
     try {
         const { id } = req.params;
         const imageDeleted = await Image.findByIdAndDelete(id);
