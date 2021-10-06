@@ -66,11 +66,11 @@ router.get('/image/:id', async (req, res) => {
     res.render('profile', { image });
 });
 
-router.get('/image/delete/:public_id', async (req, res) => {
+router.get('/image/delete/:photo_id', async (req, res) => {
     try {
-        const { id } = req.params;
-        const imageDeleted = await Image.findByIdAndDelete(id);
-        const result = await cloudinary.v2.uploader.destroy(imageDeleted.public_id)
+        const {photo_id}  = req.params;
+        const photo = await Image.findByIdAndDelete(photo_id);
+        const result = await cloudinary.v2.uploader.destroy(photo.public_id);
         // await unlink(path.resolve(req.file.path));
         console.log(result)
         res.redirect('/edit/masterEdit');

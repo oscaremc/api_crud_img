@@ -4,11 +4,12 @@ nav {
     justify-content: space-around;
     align-items: center;
     background-color: #FEFFDE;
+    height: 15vh;
 }
 
 .menu{
     padding: 10px;
-    width: 200px;
+    width: 60%;
 }
 
 .menu img:hover {
@@ -22,7 +23,8 @@ nav {
 
 .logo img {
     margin: 10px;
-    width: 300px;
+    width: 40%;
+    height: 90%;
 }
 
 .btn-ws {
