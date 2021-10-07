@@ -4,6 +4,7 @@ const imageSchema = new Schema({
     title: {type: String},
     valor: {type: String},
     description: {type: String},
+    categoria: {type: String},
     filename: {type: String},
     url: {type: String},
     public_id: {type: String},

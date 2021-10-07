@@ -52,6 +52,20 @@ nav {
     text-decoration: none;
 }
 
+.nav-item-edit{
+    border: solid 1px #000;
+    border-radius: 10px;
+    margin: 10px 15px;
+    padding: 5px;
+    font-size: 2rem;
+    box-shadow: 2px 2px 2px #000;
+}
+.nav-item-edit:hover{
+    background: #41B9D0;
+}
+.nav-link{
+    color: black;
+}
 
 @media (max-width: 800px) {
     
