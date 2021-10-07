@@ -47,6 +47,7 @@ router.post('/edit/upload', async (req, res) => {
     image.title = req.body.title;
     image.valor = req.body.valor;
     image.description = req.body.description;
+    image.categoria = req.body.categoria;
     image.filename = req.file.filename;
     // image.path = '/img/uploads/' + req.file.filename;
     image.originalname = req.file.originalname;
