@@ -23,6 +23,7 @@
                     <img src="<%= image.url %>" class="card-img-top" alt="<%= image.filename %>">
                     <div class="producto-body prod-body-edit">
                         <h5 class="producto-titulo"><%= image.title %></h5>
+                        <p class="producto-valor"><%= image.categoria %></p>
                         <p class="producto-valor"><%= image.valor %></p>
                         <p class="producto-time"><%= format(image.created_at) %></p>
                         <a href="/edit/image/<%= image._id %>" class="btn btn-primary producto-btn">

@@ -5,8 +5,12 @@ const { unlink } = require('fs-extra');
 const router = Router();
 
 // Models
+const User = require('../models/User');
+const Category = require('../models/Category');
 const Image = require('../models/Image');
-const cloudinary = require('cloudinary')
+
+// Guardar imagenes 
+const cloudinary = require('cloudinary');
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,
@@ -14,11 +18,19 @@ cloudinary.config({
 })
 const fs = require('fs-extra');
 
+// Paginas Web/cliente
 router.get('/', async (req, res) => {
     const images = await Image.find();
     res.render('index', { images });
 });
 
+router.get('/image/:id', async (req, res) => {
+    const { id } = req.params;
+    const image = await Image.findById(id);
+    res.render('profile', { image });
+});
+
+// Paginas Master/Usuario
 router.get('/edit/masterEdit', async (req, res) => {
     const images = await Image.find();
     res.render('edit/masterEdit', { images });
@@ -28,10 +40,13 @@ router.get('/edit/user', async (req, res) => {
     res.render('edit/user');
 });
 
+router.get('/edit/categoria', async (req, res) => {
+    res.render('edit/categoria');
+});
+
 router.get('/edit/upload', (req, res) => {
     res.render('edit/upload');
 });
-
 
 router.get('/edit/image/:id', async (req, res) => {
     const { id } = req.params;
@@ -59,12 +74,6 @@ router.post('/edit/upload', async (req, res) => {
     await image.save();
     await fs.unlink(req.file.path);
     res.redirect('/edit/masterEdit');
-});
-
-router.get('/image/:id', async (req, res) => {
-    const { id } = req.params;
-    const image = await Image.findById(id);
-    res.render('profile', { image });
 });
 
 router.get('/image/delete/:photo_id', async (req, res) => {
