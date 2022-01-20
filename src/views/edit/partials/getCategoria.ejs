@@ -1,0 +1,19 @@
+<div class="container-newCategoria">
+    <h3>Categorias existentes:</h3>
+    <br>
+
+    <% categorys.forEach(function (category) { %>
+
+        <div class="container-getCategoria" >
+            <div class="getCategoria-list" >
+                <p><%= category.tipo %></p>
+                <div class="getCategoria-button" >
+                    <button class="getCategoria-button-editar" >Editar</button>
+                    <button class="getCategoria-button-e" >Eliminar</button>
+                </div>
+            </div>
+        </div>
+
+    <% }) %>
+
+</div>

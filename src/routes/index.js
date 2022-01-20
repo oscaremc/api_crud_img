@@ -36,11 +36,21 @@ router.get('/edit/masterEdit', async (req, res) => {
     res.render('edit/masterEdit', { images });
 });
 
-router.get('/edit/user', async (req, res) => {
+router.get('/edit/user', (req, res) => {
     res.render('edit/user');
 });
 
 router.get('/edit/categoria', async (req, res) => {
+    const categorys = await Category.find();
+    res.render('edit/categoria', { categorys });
+});
+
+router.post('/edit/categoria', async (req, res) => {
+    
+    const category = await new Category();
+    category.tipo = req.body.tipo;
+    console.log(category)
+    await category.save();
     res.render('edit/categoria');
 });
 
@@ -54,11 +64,19 @@ router.get('/edit/image/:id', async (req, res) => {
     res.render('edit/editProfile', { image });
 });
 
+router.put('/edit/edit/:id', (req, res) => {
+    // const { id } = req.params;
+    // const image = await Image.findById(id);
+    console.log(req.file)
+    res.render('edit/edit');
+});
+
 router.post('/edit/upload', async (req, res) => {
     
     const result = await cloudinary.v2.uploader.upload(req.file.path)
-    console.log(result)
-    const image = new Image();
+    // console.log(result)
+    const image = new Image(); 
+    const images = await Image.find();
     image.title = req.body.title;
     image.valor = req.body.valor;
     image.description = req.body.description;
@@ -73,7 +91,7 @@ router.post('/edit/upload', async (req, res) => {
 
     await image.save();
     await fs.unlink(req.file.path);
-    res.redirect('/edit/masterEdit');
+    res.redirect('/edit/masterEdit', {images});
 });
 
 router.get('/image/delete/:photo_id', async (req, res) => {

@@ -1,0 +1,47 @@
+.container-newCategoria {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-getCategoria {
+    width: 100%;
+    text-align: center;
+}
+
+.container-newCategoria-formulario{
+    width: 350px;
+    height: 5vh;
+    text-align: center;
+}
+
+.container-getCategoria-list{
+    width: 350px;
+    margin: auto;
+}
+
+.getCategoria-list{
+    display: flex;
+    justify-content: space-between;
+    background-color: #969696;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.getCategoria-list p{
+    margin: auto;
+}
+
+.getCategoria-button{
+    display: flex;
+    justify-content: space-around;
+}
+
+.getCategoria-button button{
+    margin: 5px;
+    align-content: center;
+    background-color: none;
+    border: none;
+}

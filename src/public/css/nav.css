@@ -1,10 +1,18 @@
 
-nav {
+.container-nav-web {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #FEFFDE;
     height: 15vh;
+}
+
+.container-nav-edit{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #9c9c9c;
+    height: 9vh;
 }
 
 .menu{
@@ -21,10 +29,13 @@ nav {
     width: 40px;
 }
 
-.logo img {
+.logo{
     margin: 10px;
-    width: 40%;
-    height: 90%;
+    font-size: 14px;
+}
+
+.logo-img-web{
+    width: 180px;
 }
 
 .btn-ws {
@@ -53,15 +64,12 @@ nav {
 }
 
 .nav-item-edit{
-    border: solid 1px #000;
     border-radius: 10px;
-    margin: 10px 15px;
-    padding: 5px;
-    font-size: 2rem;
-    box-shadow: 2px 2px 2px #000;
+    font-size: 14px;
 }
-.nav-item-edit:hover{
-    background: #41B9D0;
+.nav-item-edit:hover, .logo:hover{
+    background: #bababa;
+    box-shadow: 2px 2px 4px #969696;
 }
 .nav-link{
     color: black;
