@@ -13,11 +13,14 @@
 <body>
 
     <%- include("partials/nav-detalles") %>
+
+            <div class="block-container-profile profile-mobile">
                 <div class="animated fadeInDown container containerProd">
                     <div class="container-img-detalle">
                         <img src="<%= image.url %>" alt="<%= image.filename %>" ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
                     </div>
                     <div class="card-body card-body-pro media-card-body">
+
                         <div class="body-titulo">
                             <div class="titulo-text">
                                 <p class="card-title">
@@ -25,7 +28,9 @@
                                 </p>
                             </div>
                         </div>
-                        <textarea  readonly disabled class="card-descripcion"><%= image.description %></textarea>
+
+                        <textarea  readonly disabled class="card-descripcion" rows="8"><%= image.description %></textarea>
+
                         <div class="body-titulo">
                             <div class="titulo-text">
                                 <div class="card-text">
@@ -34,22 +39,33 @@
                                 </div>
                             </div>
                             <div class="titulo-btn">
-                                <a href="https://wa.link/9prm56">
-                                    <div class="btn-ws">
-                                        <p><i>Escribenos...</i></p>
-                                        <img src="/img/ws-img.png" alt="logo de whatsapp">
-                                    </div>
-                                </a>
+                                <button class="btn btn-success btn-ws" id="btn-ws" onclick="location.href='https://wa.link/9prm56'">
+                                    <i class="material-icons">call</i>
+                                    <p>Contacto</p>
+                                </button>
                             </div>
                         </div>
+
+                        <div class="body-envio">
+
+                            <%- include("partials/btnEnviar") -%>
+
+                        </div>
+
                         <div class="text-import">
                             <p>
                                 <b>IMPORTANTE:  el servicio a domicilio esta inlcuido para la ciudad Guadalajara de Buga - Col. el arreglo de globos para otras ciudades se enviara en kit para armarlo en casa.</b>   Algunos productos podrían variar de lo observado en las fotos dependiendo de la disponibilidad y nuevas ediciones de los productos.
                             </p>
                         </div>
+
                     </div>
                 </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.8/swiper-bundle.min.js"></script>
+            </div>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.8/swiper-bundle.min.js"></script>
+
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </html>

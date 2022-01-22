@@ -1,12 +1,17 @@
 html {
     font-size: 62.5%;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif !important;
 }
 body {
     box-sizing: border-box;
     background: #ECE9E6;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.block-container-profile {
+    position: fixed;
+    width: 100vw;
 }
 
 .card-profile-web{
@@ -124,7 +129,6 @@ body {
     background: transparent;
     color: black;
     width: 100%;
-    height: 100%;
 }
 .btn-text-detalle{
     font-size: 1rem;
@@ -160,6 +164,10 @@ body {
     width: 400px;
     margin: 10px;
     padding: 10px;
+}
+
+.body-text-info-envio p{
+    font-size: 1.4rem;
 }
 
 @media (max-width:800px){
@@ -205,6 +213,14 @@ body {
 /* Fin del detalle del producto */
 @media (max-width:600px){
     
+    .block-container-profile, .profile-mobile {
+        position: relative;
+    }
+
+    .block-container-profile, .profile-mobile{
+        width: 90vw;
+    }
+
     .card-profile-web{
         display: none;
     }
@@ -214,9 +230,15 @@ body {
     }
 
     .containerProd{
+        height: 100%;
         display: block;
         padding: 0;
     }
+
+    .card-body-pro, .media-card-body{
+        height: 100%;
+    }
+
     .card-body, .container-img-detalle{
         width: 100%;
         padding: 0;
@@ -225,7 +247,6 @@ body {
     .card-descripcion {
         font-size: 1.3rem;
         text-align: center;
-        height: 40%
     }
 }
 
