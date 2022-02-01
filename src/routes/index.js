@@ -24,6 +24,12 @@ router.get('/', async (req, res) => {
     res.render('index', { images });
 });
 
+router.get('/:cate', async (req, res) => {
+    const  {cate}  = req.params;
+    const images = await Image.find({categoria: cate});
+    res.render('index', { images });
+});
+
 router.get('/image/:id', async (req, res) => {
     const { id } = req.params;
     const image = await Image.findById(id);

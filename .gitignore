@@ -2,3 +2,5 @@ node_modules
 src/public/img/uploads
 
 .env
+
+web.jpg

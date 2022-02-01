@@ -1,9 +1,18 @@
+
 <div class="body-container">
     <div class="card-container">
+        <% let array = [] ; %>
         <% images.forEach(function (image) { %>
-            <div class="card-categoria">
-                <%= image.categoria %>
-            </div>
+            <% array.push(image.categoria) %>
+        <% }) %>
+        <% array = [...new Set(array)] ; %>
+        <% array.forEach(function (cate) { %>
+        <div class="card-categoria">
+            <a href="/<%= cate %>">
+                <%= cate %>
+            </a>
+        </div>
         <% }) %>
     </div>
 </div>
+
