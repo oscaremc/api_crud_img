@@ -22,7 +22,7 @@
         <div class="row">
             <h5>Todo lo que necesitas para la decoración de una fiesta inolvidable:</h5>
             <div class="card-columns contenedor-img">
-                <% images.forEach(function (image) { %>
+                <% images.reverse().forEach(function (image) { %>
                     <div class="card animated fadeInDown container-producto">
                         <div class="producto-body">
                             <a href="/image/<%= image._id %>">

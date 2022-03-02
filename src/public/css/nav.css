@@ -51,6 +51,16 @@
     margin-left: 10px;
 }
 
+.container-btn-envio {
+    border: 2px solid #20b664;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container-btn-envio:hover {
+    background-color: #20b66473;
+}
+
 .btn-envio{
     display: flex;
 }
